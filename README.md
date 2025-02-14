@@ -1,2 +1,3 @@
 # 食用说明
-一加内核开源地址：[OnePlusOSS](https://github.com/OnePlusOSS/kernel_manifest)
+请移步[原项目](https://github.com/Laomaoi/Action-KernelSU-Next)
+fork并作出修改相应的代码即可食用
