@@ -74,7 +74,6 @@ jobs:
            git clone https://github.com/TanakaLun/kernel_patches4mksu.git
            cd kernel_platform
            cp ../susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU-Next/
-           cp ../kernel_patches4mksu/mksu_susfs.patch ./KernelSU-Next/
            cp ../susfs4ksu/kernel_patches/50_add_susfs_in_gki-android14-6.1.patch ./common/
            cp ../susfs4ksu/kernel_patches/fs/* ./common/fs/
            cp ../susfs4ksu/kernel_patches/include/linux/* ./common/include/linux/
@@ -82,11 +81,8 @@ jobs:
            # Apply patches
            cd ./KernelSU-Next
            patch -p1 --forward < 10_enable_susfs_for_ksu.patch || true
-           patch -p1 --forward < mksu_susfs.patch || true
            cd ../common
            patch -p1 < 50_add_susfs_in_gki-android14-6.1.patch || true
-           cp ../../kernel_patches4mksu/69_hide_stuff.patch ./
-           patch -p1 -F 3 < 69_hide_stuff.patch
            git add -A && git commit -a -m "BUILD Kernel"
            cd ..
            cd ./msm-kernel && git add -A && git commit -a -m "BUILD Kernel"
